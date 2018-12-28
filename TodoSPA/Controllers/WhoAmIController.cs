@@ -22,32 +22,7 @@ namespace TodoSPA.Controllers
             return Ok(me);
         }
 
-        public static async Task<string> GetADTokenForSqlAsync()
-        {
-            var context = new AuthenticationContext("https://login.windows.net/b41b72d0-4e9f-4c26-8a69-f949f367c91d");
-
-            var credentials = new ClientCredential("ab4df43c-22f8-41b6-80fe-67dd32489591", "PR1V+Mok7IErHiKOCAyopJn9HR5yD+Kal3LMpQZA110=");
-
-            var result = await context.AcquireTokenAsync("https://database.windows.net/", credentials);
-
-            return result.AccessToken;
-        }
-
-        public static async Task<string> GetDelegatedADTokenForSqlAsync()
-        {
-            var context = new AuthenticationContext("https://login.windows.net/b41b72d0-4e9f-4c26-8a69-f949f367c91d");
-
-            var credentials = new ClientCredential("ab4df43c-22f8-41b6-80fe-67dd32489591", "PR1V+Mok7IErHiKOCAyopJn9HR5yD+Kal3LMpQZA110=");
-
-            string authorization = HttpContext.Current.Request.Headers["Authorization"];
-            string currentUserToken = authorization.Substring("Bearer ".Length);
-
-            var userAssertion = new UserAssertion(currentUserToken);
-
-            var result = await context.AcquireTokenAsync("https://database.windows.net/", credentials, userAssertion);
-
-            return result.AccessToken;
-        }
+        
 
         private async Task<string> GetCurrentSqlUserNameAsync(string connectionString, string token)
         {
