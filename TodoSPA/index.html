@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Todo List: a SPA sample demonstrating Azure AD and ADAL JS</title>
+    <title>Azure PoC</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 </head>
@@ -19,13 +19,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#/Home">ADAL JS Sample</a>
+                <a class="navbar-brand" href="#/Home">Azure PoC</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li ng-class="{ active: isActive('/Home') }"><a href="#/Home">Home</a></li>
-                    <li ng-class="{ active: isActive('/TodoList') }"><a href="#/TodoList">To Do List</a></li>
-                    <li ng-class="{ active: isActive('/ToGoList') }"><a href="#/ToGoList">To Go List</a></li>
+                    <li ng-class="{ active: isActive('/WhoAmI') }"><a href="#/WhoAmI">Who Am I in DB</a></li>
+                    <!--<li ng-class="{ active: isActive('/TodoList') }"><a href="#/TodoList">To Do List</a></li>
+                    <li ng-class="{ active: isActive('/ToGoList') }"><a href="#/ToGoList">To Go List</a></li>-->
                     <li ng-class="{ active: isActive('/UserData') }"><a href="#/UserData" ng-show="userInfo.isAuthenticated">User</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -42,9 +43,8 @@
         <div class="row">
             <div class="col-xs-10 col-xs-offset-1" style="background-color:azure">
                 <div class="page-header">
-                    <h1>Todo List</h1>
+                    <h1>Azure AD + Azure SQL + Web API</h1>
                 </div>
-                <p>This sample demonstrates how to take advantage of ADAL JS for adding Azure AD authentication to your AngularJS apps.</p>
             </div>
         </div>
         <div class="row">
@@ -67,5 +67,7 @@
         <script src="App/Scripts/todoListSvc.js"></script>
         <script src="App/Scripts/toGoListSvc.js"></script>
         <script src="App/Scripts/toGoListCtrl.js"></script>
+        <script src="App/Scripts/whoAmISvc.js"></script>
+        <script src="App/Scripts/whoAmICtrl.js"></script>
 </body>
 </html>

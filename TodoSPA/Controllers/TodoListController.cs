@@ -7,6 +7,8 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Security.Claims;
 using TodoSPA.DAL;
+using System.Web;
+using System.IdentityModel.Tokens;
 
 namespace TodoSPA.Controllers
 {
@@ -19,6 +21,7 @@ namespace TodoSPA.Controllers
         // GET: api/TodoList
         public IEnumerable<Todo> Get()
         {
+            var token = HttpContext.Current.Request.Headers["Authorization"];
             string owner = ClaimsPrincipal.Current.FindFirst(ClaimTypes.NameIdentifier).Value;
             IEnumerable<Todo> currentUserToDos = db.Todoes.Where(a => a.Owner == owner);
             return currentUserToDos;
