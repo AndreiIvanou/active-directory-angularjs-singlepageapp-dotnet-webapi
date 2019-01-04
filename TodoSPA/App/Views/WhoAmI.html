@@ -1,7 +1,27 @@
-﻿<div ng-init="populate()">
+﻿<div>
     <p class="error">{{error}}</p>
     <p>{{loadingMessage}}</p>
     <div class="panel">
+        <b>What DB thinks about me:</b>
         <p>{{me}}</p>
+    </div>
+    <div class="panel">
+        <b>My initial token:</b>
+        <p>{{currentUserToken}}</p>
+    </div>
+    <div class="panel">
+        <b>Token for SQL:</b>
+        <p>{{tokenForSql}}</p>
+    </div>
+    <div class="panel">
+        <label>Group:</label>
+        <input ng-model="group" style="width: 350px;"></input>
+    </div>
+    <div class="panel">
+        <label>Impersonate:</label>
+        <input ng-model="shouldImpersonate" type="checkbox"></input>
+    </div>
+    <div class="panel">
+        <button ng-click="populate()">Check</button>
     </div>
 </div>
