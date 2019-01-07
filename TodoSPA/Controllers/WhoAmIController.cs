@@ -12,7 +12,7 @@ namespace TodoSPA.Controllers
     [Authorize]
     public class WhoAmIController : ApiController
     {
-        private const string Password = "";
+        private const string Password = "PR1V+Mok7IErHiKOCAyopJn9HR5yD+Kal3LMpQZA110=";
 
         public async Task<IHttpActionResult> Get(string group, bool shouldImpersonate)
         {
