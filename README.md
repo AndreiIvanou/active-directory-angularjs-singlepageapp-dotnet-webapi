@@ -1,3 +1,4 @@
+[![Build Status](https://dev.azure.com/AndreiIvanou0572/First/_apis/build/status/AndreiIvanou.active-directory-angularjs-singlepageapp-dotnet-webapi?branchName=master)](https://dev.azure.com/AndreiIvanou0572/First/_build/latest?definitionId=1?branchName=master)
 ---
 services: active-directory
 platforms: javascript
